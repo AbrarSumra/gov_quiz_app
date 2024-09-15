@@ -6,4 +6,8 @@ class AppColor {
 
   static const Color kGreyColor = Color(0xFF202124);
   static const Color kWhiteColor = Color(0xFFFFFFFF);
+
+  static const LinearGradient kLinearGradientColor = LinearGradient(
+    colors: [Colors.indigo, Colors.purple],
+  );
 }
