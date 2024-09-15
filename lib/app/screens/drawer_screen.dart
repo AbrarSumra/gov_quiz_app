@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gov_quiz_app/app/screens/home_screen.dart';
 import 'package:gov_quiz_app/app/screens/profile_screen.dart';
+import 'package:gov_quiz_app/app/screens/quiz_screen/quiz_screen.dart';
 import '../constants/app_colors/app_colors.dart';
 import '../constants/widgets/drawer_list_tile.dart';
 
@@ -93,6 +94,14 @@ class _DrawerScreenState extends State<DrawerScreen> {
               },
             ),
             DrawerListTile(
+              title: 'Quiz',
+              icon: CupertinoIcons.question,
+              isSelected: _selectedIndex == 2, // Highlight if selected
+              onTap: () {
+                _navigateToPage(context, 2, const QuizScreen());
+              },
+            ),
+            DrawerListTile(
               title: 'Help',
               icon: Icons.help,
               isSelected: _selectedIndex == 11, // Highlight if selected
@@ -100,7 +109,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 // Implement Help navigation
               },
             ),
-            DrawerListTile(
+            const DrawerListTile(
               title: 'Log Out',
               icon: Icons.logout,
               isSelected: false, // Log Out is not selectable

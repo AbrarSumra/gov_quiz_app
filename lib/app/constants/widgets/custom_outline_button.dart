@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../app_colors/app_colors.dart';
 
-class PressableButton extends StatefulWidget {
-  const PressableButton({
+class CustomOutlineButton extends StatefulWidget {
+  const CustomOutlineButton({
     super.key,
     required this.title,
     this.onTap,
@@ -19,10 +19,10 @@ class PressableButton extends StatefulWidget {
   final bool isLoading;
 
   @override
-  State<PressableButton> createState() => _PressableButtonState();
+  State<CustomOutlineButton> createState() => _CustomOutlineButtonState();
 }
 
-class _PressableButtonState extends State<PressableButton> {
+class _CustomOutlineButtonState extends State<CustomOutlineButton> {
   bool _isPressed = false;
 
   @override
@@ -53,14 +53,14 @@ class _PressableButtonState extends State<PressableButton> {
             height: 50,
             width: 160,
             decoration: BoxDecoration(
-              color: widget.btnColor,
               borderRadius: BorderRadius.circular(5),
+              border: Border.all(color: widget.btnColor, width: 1),
             ),
             alignment: Alignment.center,
             child: Text(
               widget.title,
               style: TextStyle(
-                color: widget.fontColor,
+                color: widget.btnColor,
                 fontSize: 18,
               ),
             ),

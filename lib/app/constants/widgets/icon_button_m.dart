@@ -8,44 +8,46 @@ class ButtonIconM extends StatelessWidget {
     super.key,
     required this.title,
     required this.onTap,
+    required this.icon,
     this.btnColor = AppColor.kGreyColor,
+    this.isEnable = false,
   });
 
   final String title;
   final VoidCallback onTap;
   final Color btnColor;
+  final bool isEnable;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 200,
-      height: 50,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: btnColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-          ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.only(right: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+        decoration: BoxDecoration(
+          color: isEnable ? AppColor.kGreyColor : Colors.white,
+          borderRadius: BorderRadius.circular(30),
         ),
-        onPressed: onTap,
+        height: 40,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FittedBox(
-              child: Text(
+            Icon(
+              icon,
+              color: isEnable ? AppColor.kWhiteColor : AppColor.kGreyColor,
+              size: 25,
+            ),
+            const SizedBox(width: 5),
+            if (isEnable)
+              Text(
                 title,
                 style: const TextStyle(
-                  fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-            const SizedBox(width: 10),
-            const Icon(
-              CupertinoIcons.right_chevron,
-              color: Colors.white,
-            ),
           ],
         ),
       ),

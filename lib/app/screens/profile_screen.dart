@@ -11,16 +11,16 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.kAppBackgroundColor,
-      appBar: const AppBarScreen(),
+      appBar: const AppBarScreen(appBarTitle: 'Profile'),
       drawer: const DrawerScreen(selectedIndex: 1),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: ListView(
-            children: [
+            children: const [
               Center(
                 child: Text('Profile Page'),
-              )
+              ),
             ],
           ),
         ),
