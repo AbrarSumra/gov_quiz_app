@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.kAppBackgroundColor,
-      appBar: const AppBarScreen(),
+      appBar: const AppBarScreen(appBarTitle: "home page at 21:50",),
       drawer: const DrawerScreen(selectedIndex: 0),
       body: SafeArea(
         child: Padding(
