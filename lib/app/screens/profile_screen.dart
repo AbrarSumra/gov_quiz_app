@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
           child: ListView(
             children: [
               Center(
-                child: Text('Profile Page 1'),
+                child: Text('Profile Page 2'),
               )
             ],
           ),
