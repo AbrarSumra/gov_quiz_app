@@ -28,8 +28,10 @@ const questions = [
     'Lakhabaval',
     'Masitiya',
   ]),
-  QuizQuestion('What is My Father Name?',
-      ['Mustafabhai', 'Gafarbhai', 'Aadambhai', 'Firozbhai']),
+  QuizQuestion(
+    'What is My Father Name?',
+    ['Mustafabhai', 'Gafarbhai', 'Aadambhai', 'Firozbhai'],
+  ),
   QuizQuestion('What is My Favorite Food', [
     'Gulabjambu',
     'Ghughra',

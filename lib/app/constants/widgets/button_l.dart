@@ -7,7 +7,7 @@ class ButtonL extends StatelessWidget {
     super.key,
     required this.title,
     required this.onTap,
-    this.btnColor = AppColor.kGreyColor,
+    this.btnColor = AppColor.kAppOrangeColor,
     this.isLoading = false, // New parameter to control loading state
   });
 
@@ -20,12 +20,12 @@ class ButtonL extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 60,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
+      height: 50,
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
           backgroundColor: btnColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(5),
           ),
         ),
         onPressed: isLoading ? null : onTap, // Disable tap if loading

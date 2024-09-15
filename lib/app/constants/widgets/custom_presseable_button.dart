@@ -7,7 +7,7 @@ class PressableButton extends StatefulWidget {
     super.key,
     required this.title,
     this.onTap,
-    this.btnColor = AppColor.kGreyColor,
+    this.btnColor = AppColor.kAppOrangeColor,
     this.fontColor = AppColor.kWhiteColor,
     this.isLoading = false,
   });
@@ -27,39 +27,42 @@ class _PressableButtonState extends State<PressableButton> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: widget.onTap,
-      onTapDown: (_) {
-        setState(() {
-          _isPressed = true;
-        });
-      },
-      onTapUp: (_) {
-        setState(() {
-          _isPressed = false;
-        });
-      },
-      onTapCancel: () {
-        setState(() {
-          _isPressed = false;
-        });
-      },
-      child: AnimatedScale(
-        scale: _isPressed ? 0.9 : 1.0, // Scaling the button
-        duration: const Duration(milliseconds: 50),
-        child: Container(
-          height: 50,
-          width: 160,
-          decoration: BoxDecoration(
-            color: widget.btnColor,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          alignment: Alignment.center,
-          child: Text(
-            widget.title,
-            style: TextStyle(
-              color: widget.fontColor,
-              fontSize: 18,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 5),
+      child: GestureDetector(
+        onTap: widget.onTap,
+        onTapDown: (_) {
+          setState(() {
+            _isPressed = true;
+          });
+        },
+        onTapUp: (_) {
+          setState(() {
+            _isPressed = false;
+          });
+        },
+        onTapCancel: () {
+          setState(() {
+            _isPressed = false;
+          });
+        },
+        child: AnimatedScale(
+          scale: _isPressed ? 0.9 : 1.0, // Scaling the button
+          duration: const Duration(milliseconds: 50),
+          child: Container(
+            height: 50,
+            width: 160,
+            decoration: BoxDecoration(
+              color: widget.btnColor,
+              borderRadius: BorderRadius.circular(5),
+            ),
+            alignment: Alignment.center,
+            child: Text(
+              widget.title,
+              style: TextStyle(
+                color: widget.fontColor,
+                fontSize: 18,
+              ),
             ),
           ),
         ),
