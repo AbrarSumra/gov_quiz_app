@@ -15,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   // Sample data for grid items
   List<CustomGridItem> items = [
     CustomGridItem(
