@@ -16,15 +16,15 @@ class AppBarScreen extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       centerTitle: true,
       backgroundColor: AppColor.kAppOrangeColor,
+      foregroundColor: AppColor.kBlackColor,
       title: Text(
         appBarTitle,
-        style: const TextStyle(color: AppColor.kWhiteColor),
+        style: const TextStyle(fontWeight: FontWeight.w500),
       ),
       leading: Builder(builder: (context) {
         return IconButton(
           icon: const Icon(
             Icons.menu,
-            color: Colors.white,
           ),
           onPressed: () {
             Scaffold.of(context).openDrawer();

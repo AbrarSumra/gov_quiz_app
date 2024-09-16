@@ -28,7 +28,7 @@ class CustomGridView extends StatelessWidget {
       itemCount: items.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // 2 items per row
-       // childAspectRatio: 9 / 16, // 9:16 aspect ratio
+        // childAspectRatio: 9 / 16, // 9:16 aspect ratio
         crossAxisSpacing: 0,
         mainAxisSpacing: 0,
       ),
@@ -47,11 +47,12 @@ class CustomGridContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all( 20),
+      margin: EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: item.backgroundColor ?? Colors.white, // Default to white
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: AppColor.kWhiteColor, width: 3), // Orange border
+        border:
+            Border.all(color: AppColor.kWhiteColor, width: 3), // Orange border
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
