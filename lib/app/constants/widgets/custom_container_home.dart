@@ -7,7 +7,8 @@ class CustomElevatedContainer extends StatelessWidget {
   final IconData icon;
   final String title;
 
-  CustomElevatedContainer({
+  const CustomElevatedContainer({
+    super.key,
     required this.containerColor,
     required this.height,
     required this.width,
@@ -28,7 +29,7 @@ class CustomElevatedContainer extends StatelessWidget {
             color: Colors.black.withOpacity(0.2),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(2, 5), // changes position of shadow
+            offset: const Offset(2, 5), // changes position of shadow
           ),
         ],
       ),
@@ -40,10 +41,10 @@ class CustomElevatedContainer extends StatelessWidget {
             size: 40,
             color: Colors.black,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               color: Colors.black,
               fontWeight: FontWeight.bold,

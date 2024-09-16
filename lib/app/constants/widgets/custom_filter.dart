@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:gov_quiz_app/app/constants/app_colors/app_colors.dart';
 
 class CustomFilterWidget extends StatefulWidget {
+  const CustomFilterWidget({super.key});
+
   @override
-  _CustomFilterWidgetState createState() => _CustomFilterWidgetState();
+  State<CustomFilterWidget> createState() => _CustomFilterWidgetState();
 }
 
 class _CustomFilterWidgetState extends State<CustomFilterWidget> {
@@ -27,13 +29,12 @@ class _CustomFilterWidgetState extends State<CustomFilterWidget> {
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        // Container with DropdownButton
         Container(
-          width: screenWidth * 0.7, // 70% of screen width
+          width: screenWidth * 0.7,
           height: 50, // 7% of screen height
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           decoration: BoxDecoration(
             color: AppColor.kWhiteColor,
             borderRadius: BorderRadius.circular(8.0),
@@ -42,16 +43,17 @@ class _CustomFilterWidgetState extends State<CustomFilterWidget> {
           child: DropdownButton<String>(
             value: dropdownValue,
             isExpanded: true, // Makes the dropdown take the full width
-            icon: Icon(Icons.arrow_drop_down),
+            icon: const Icon(Icons.arrow_drop_down),
             elevation: 16,
-            style: TextStyle(color: Colors.black, fontSize: 16),
-            underline: SizedBox(),
+            style: const TextStyle(color: Colors.black, fontSize: 16),
+            underline: const SizedBox(),
             onChanged: (String? newValue) {
               setState(() {
                 dropdownValue = newValue!;
               });
             },
-            items: dropdownOptions.map<DropdownMenuItem<String>>((String value) {
+            items:
+                dropdownOptions.map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
                 child: Text(value),
@@ -59,7 +61,7 @@ class _CustomFilterWidgetState extends State<CustomFilterWidget> {
             }).toList(),
           ),
         ),
-        // Filter Icon
+        const SizedBox(width: 20),
         Container(
           width: screenWidth * 0.1, // 20% of screen width
           height: 50, // 7% of screen height
@@ -68,7 +70,7 @@ class _CustomFilterWidgetState extends State<CustomFilterWidget> {
             color: AppColor.kWhiteColor,
             borderRadius: BorderRadius.circular(8.0),
           ),
-          child: Icon(
+          child: const Icon(
             Icons.filter_alt,
             color: Colors.black,
             size: 30,
@@ -78,5 +80,3 @@ class _CustomFilterWidgetState extends State<CustomFilterWidget> {
     );
   }
 }
-
-
